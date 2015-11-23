@@ -18,7 +18,7 @@ class Post(models.Model):
     published = models.BooleanField(default=False)
     slug  = models.SlugField(max_length=255, blank=True)
     tag = models.ManyToManyField(Tag, related_name="post")
-
+    edited_on = models.DateTimeField(auto_now_add=True)
     def __str__(self):
         return self.slug
 
