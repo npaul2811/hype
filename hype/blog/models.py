@@ -12,7 +12,7 @@ class Post(models.Model):
     author = models.ForeignKey('auth.User')
     body = models.TextField()
     edited_on = models.DateTimeField(auto_now=True)
-    published_on = models.DateTimeField(auto_now_add=True)
+    published_on = models.DateTimeField(auto_now=True)
     published = models.BooleanField(default=False)
     slug  = models.SlugField(max_length=255, blank=True)
     tag = models.ManyToManyField(Tag, related_name="posts")
