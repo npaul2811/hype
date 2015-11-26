@@ -20,5 +20,10 @@ class Post(models.Model):
     def __str__(self):
         return self.slug
 
+    class Meta:
+        verbose_name = "Blog post"
+        verbose_name_plural = "Blog posts"
+        ordering = ["-published_on"]
+
 
 
