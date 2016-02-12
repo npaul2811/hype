@@ -1,16 +1,19 @@
 from django.db import models
 
+
 class Tag(models.Model):
     slug = models.SlugField(max_length=255, blank=True)
 
     def __str__(self):
         return self.slug
 
+
 # Custom queryset manager that only displays posts that have publish set to true.
 class PostQuerySet(models.QuerySet):
 
     def published(self):
         return self.filter(published=True)
+
 
 class Post(models.Model):
     """ Model for post """
