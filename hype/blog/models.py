@@ -11,11 +11,12 @@ class Tag(models.Model):
     name = models.CharField(
         verbose_name='Tag Name',
         blank=False,
+        max_length=255,
     )
     slug = models.SlugField(
         verbose_name='Tag Slug',
         blank=True,
-        max_length=255,
+        max_length=300,
     )
 
     class Meta:
@@ -43,6 +44,7 @@ class Post(models.Model):
     slug = models.SlugField(
         verbose_name='Post Slug',
         blank=True,
+        max_length=300,
     )
     author = models.ForeignKey(
         User,
