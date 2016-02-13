@@ -59,6 +59,3 @@ target/
 
 # Python Misc
 *.*~
-
-# Hype Project Ignores
-migrations/
