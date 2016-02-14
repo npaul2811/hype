@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{post.title}}</h1>
+    <div class="post-meta">Author: {{post.author}}<br>
+    Published: {{post.published_on}}</div>
+    <div class="post-body">
+        {{post.body|safe}}
+    </div>
+{% endblock %}
