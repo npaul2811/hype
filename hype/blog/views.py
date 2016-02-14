@@ -7,9 +7,9 @@ from .models import Post, Tag
 class BlogIndex(View):
 
     def get(self, request):
-        queryset = Post.objects.filter(is_published=True)
+        posts = Post.objects.filter(published=True)
         context = {
-            'posts': queryset,
+            'posts': posts,
         }
         return render(
             request,
@@ -21,12 +21,12 @@ class BlogIndex(View):
 class BlogSingle(View):
 
     def get(self, request, slug):
-        post = get_object_or_404(slug=slug)
+        post = get_object_or_404(Post, slug=slug)
         context = {
             'post': post,
         }
         return render(
             request,
-            'blog_single.html',
+            'blog/blog_single.html',
             context,
         )

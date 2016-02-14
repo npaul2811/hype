@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-{% if post in posts %}
+{% if posts %}
     {% for post in posts %}
         <div class="post-box">
-            <h2 class="post-title">{{post.title}}</h2>
+            <h2 class="post-title"><a href="{{post.get_absolute_url}}">{{post.title}}</a></h2>
             <div class="post-meta">
-                <span>Author: {{post.author.username}]<br>
+                <span>Author: {{post.author.username}}<br>
                 Published on: {{post.published_on}}</span>
             </div>
         </div>
     {% endfor %}
-{% endfor %}
+{% endif %}
 {% endblock %}
