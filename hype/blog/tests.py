@@ -5,7 +5,7 @@ class BlogTestCase(TestCase):
 	def setUp(self):
 		pass
 
-	def test_index_is_mapped_properly(self):
+	def test_index_is_mapped_correctly(self):
 		"""Tests whether index is mapped properly"""
 		c = Client()
 		response = c.get('/')
